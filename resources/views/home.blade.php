@@ -5,6 +5,21 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .fas{
+        color:red;
+    }
+    .card-body, .card-header, .card-footer{
+      background-color: lightblue;
+    }
+    .file {
+        height:50px;
+        width:50px;  
+        margin-left:85%;   
+        margin-top:-10px;
+        position:absolute;
+    }
+</style>
 <div class="row">
     <div class="col-lg-12">
         <h4>Posts</h4>
@@ -12,8 +27,9 @@
     <div class="col-lg-6 offset-lg-3">
         @foreach ($posts as $item)
         <div class="card card-outline card-primary">
-            <div class="card-header">
-                <span class="card-title">{{ $item->title }}</span>
+            <div class="card-header">               
+                    <img class="file" src="{{asset('img\axie.png')}}" alt="axie">
+                <div class="card-title">{{ $item->title }}</div>
             </div>
             <div class="card-body">
                 <p>{{ $item->description }}</p>
