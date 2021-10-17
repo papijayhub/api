@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\UsersController;
+use App\Http\Controllers\API\StudentsController;
+use App\Http\Controllers\API\LikesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('test-query', [UsersController::class, 'testQuery']);
+Route::get('students-query', [StudentsController::class, 'studentsAPI']);
+
